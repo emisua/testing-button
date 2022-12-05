@@ -24,7 +24,7 @@ test('initial conditions', () => {
   render(<App />)
 
   const colorButton = screen.getByRole('button', { name: /change to blue/i })
-  const checkbox = screen.getByRole('checkbox')
+  const checkbox = screen.getByRole('checkbox', { label: 'Disable button' })
 
   // Comprobar que el button comience activado
   expect(colorButton).toBeEnabled()
@@ -33,11 +33,11 @@ test('initial conditions', () => {
   expect(checkbox).not.toBeChecked()
 })
 
-test('checkbox disables dutton on first click and enables on second click', () => {
+test('checkbox disables button on first click and enables on second click, then button turns gray', () => {
   render(<App />)
 
   const colorButton = screen.getByRole('button', { name: /change to blue/i })
-  const checkbox = screen.getByRole('checkbox')
+  const checkbox = screen.getByRole('checkbox', { label: 'Disable button' })
 
   // Check checkbox
   fireEvent.click(checkbox)
@@ -45,9 +45,15 @@ test('checkbox disables dutton on first click and enables on second click', () =
   // Comprobar que el button esté desactivado
   expect(colorButton).not.toBeEnabled()
 
+  // Comprobar que tenga el fondo gris
+  expect(colorButton).toHaveStyle({ backgroundColor: 'gray' })
+
   // Uncheck checkbox
   fireEvent.click(checkbox)
 
   // Comprobar que el button esté activado de nuevo
   expect(colorButton).toBeEnabled()
+
+  // Coprobar que no tenga el fondo gris
+  expect(colorButton).not.toHaveStyle({ backgroundColor: 'gray' })
 })
