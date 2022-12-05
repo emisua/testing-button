@@ -5,26 +5,30 @@ import { replaceCamelWithSpaces } from './App'
 test('button has correct initial color and updates when clicked', () => {
   render(<App />)
 
-  // Find an element with a role button and text of 'Change to blue'
-  const colorButton = screen.getByRole('button', { name: 'Change to blue' })
+  // Find an element with a role button and text of 'Change to Midnight Blue'
+  const colorButton = screen.getByRole('button', {
+    name: 'Change to Midnight Blue',
+  })
 
-  // Expect the background color to be red
-  expect(colorButton).toHaveStyle({ backgroundColor: 'red' })
+  // Expect the background color to be MediumVioletRed
+  expect(colorButton).toHaveStyle({ backgroundColor: 'MediumVioletRed' })
 
   // Click button
   fireEvent.click(colorButton)
 
-  // Expect the background color to be blue
-  expect(colorButton).toHaveStyle({ backgroundColor: 'blue' })
+  // Expect the background color to be MidnightBlue
+  expect(colorButton).toHaveStyle({ backgroundColor: 'MidnightBlue' })
 
-  // Expect the button text to be Change to red
-  expect(colorButton).toHaveTextContent(/change to red/i)
+  // Expect the button text to be Change to MediumVioletRed
+  expect(colorButton).toHaveTextContent(/change to Medium Violet Red/i)
 })
 
 test('initial conditions', () => {
   render(<App />)
 
-  const colorButton = screen.getByRole('button', { name: /change to blue/i })
+  const colorButton = screen.getByRole('button', {
+    name: 'Change to Midnight Blue',
+  })
   const checkbox = screen.getByRole('checkbox', { label: 'Disable button' })
 
   // Comprobar que el button comience activado
@@ -37,7 +41,9 @@ test('initial conditions', () => {
 test('checkbox disables button on first click and enables on second click, then button turns gray', () => {
   render(<App />)
 
-  const colorButton = screen.getByRole('button', { name: /change to blue/i })
+  const colorButton = screen.getByRole('button', {
+    name: 'Change to Midnight Blue',
+  })
   const checkbox = screen.getByRole('checkbox', { label: 'Disable button' })
 
   // Check checkbox
