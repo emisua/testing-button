@@ -3,15 +3,12 @@ import { useState } from 'react'
 
 function App() {
   const [buttonColor, setButtonColor] = useState('red')
-
-  const handleChangeButtonBackgroundColor = () => {
-    buttonColor === 'red' ? setButtonColor('blue') : setButtonColor('red')
-  }
+  const newButtonColor = buttonColor === 'red' ? 'blue' : 'red'
 
   return (
     <div>
       <button
-        onClick={handleChangeButtonBackgroundColor}
+        onClick={() => setButtonColor(newButtonColor)}
         style={{ backgroundColor: buttonColor }}
       >
         Change to {buttonColor === 'red' ? 'blue' : 'red'}
