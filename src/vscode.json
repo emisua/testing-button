@@ -1,0 +1,103 @@
+{
+  "oneDarkPro.bold": true,
+  "editor.fontFamily": "JetBrains Mono, Consolas, 'Courier New', monospace",
+  "editor.fontSize": 13,
+  "editor.linkedEditing": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+  "editor.tabSize": 2,
+  "reactSnippets.settings.importReactOnTop": false,
+  "prettier.jsxSingleQuote": true,
+  "prettier.semi": false,
+  "prettier.singleAttributePerLine": true,
+  "prettier.singleQuote": true,
+  "editor.fontLigatures": true,
+  "editor.wordWrapColumn": 70,
+  "editor.wrappingStrategy": "advanced",
+  "editor.wrappingIndent": "same",
+  "editor.wordWrap": "wordWrapColumn",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "window.zoomLevel": 1,
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.iconTheme": "moxer-icons",
+  "workbench.colorTheme": "oh-lucy-evening",
+  "editor.minimap.showSlider": "always",
+  "editor.minimap.enabled": false,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  //exludes fies & folders in search indexing
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/env": true,
+    "**/venv": true
+  },
+  //exludes fies & folders for watcher service
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/env/**": true,
+    "**/venv/**": true,
+    "env-*": true
+  },
+  "editor.tokenColorCustomizations": {
+    "[oh-lucy-evening]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "keyword.operator.comparison.js.jsx",
+            "keyword.operator.comparison.js"
+          ],
+          "settings": { "foreground": "#00ff04" }
+        },
+        {
+          "scope": [
+            "support.class.component.js.jsx",
+            "support.class.component.js"
+          ],
+          "settings": { "fontStyle": "bold" }
+        },
+        {
+          "scope": "entity.name.function",
+          "settings": { "foreground": "#f4d194" }
+        },
+        {
+          "scope": [
+            "meta.object-literal.key.js.jsx",
+            "meta.object-literal.key.js"
+          ],
+          "settings": { "foreground": "#f3c4da", "fontStyle": "italic" }
+        },
+        {
+          "scope": ["keyword.control.flow.js.jsx", "keyword.control.flow.js"],
+          "settings": { "foreground": "#f3ff96", "fontStyle": "bold" }
+        },
+        {
+          "scope": ["meta.import.js.jsx", "keyword.control.import.js"],
+          "settings": { "foreground": "#6d6d6d" }
+        },
+        {
+          "scope": "storage.type",
+          "settings": { "fontStyle": "" }
+        },
+        {
+          "scope": ["entity.name.tag", "keyword.operator", "keyword.control"],
+          "settings": { "foreground": "#ff95b5" }
+        },
+        {
+          "scope": "variable.other.constant",
+          "settings": { "foreground": "#bda1dd" }
+        },
+        {
+          "scope": ["variable.other.property.js"],
+          "settings": { "foreground": "#17acb4" }
+        }
+      ]
+    }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "eslint.alwaysShowStatus": true
+}
